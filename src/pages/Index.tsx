@@ -6,7 +6,7 @@ const Index = () => {
   const [isTechnical, setIsTechnical] = useState(false);
 
   return (
-    <div className="min-h-screen p-6 animated-gradient">
+    <div className={`min-h-screen p-6 ${isTechnical ? 'technical-bg' : 'non-technical-bg'} animated-gradient`}>
       <div className="max-w-4xl mx-auto space-y-8">
         <div className="glass-card p-8 space-y-6">
           <div className="flex justify-center items-center space-x-4">
@@ -27,25 +27,25 @@ const Index = () => {
 
           <div className="space-y-6">
             <div className="text-center">
-              <h1 className="text-4xl font-bold mb-4">Welcome to Your App</h1>
+              <h1 className="text-4xl font-bold mb-4">Welcome to Instinct Fest Hub</h1>
               <p className="text-xl text-muted-foreground">
                 {isTechnical 
-                  ? "Access advanced features and technical documentation"
-                  : "Get started with our user-friendly interface"}
+                  ? "Explore technical sessions and workshops"
+                  : "Discover exciting events and activities"}
               </p>
             </div>
 
             <div className="glass p-6 space-y-4">
               <h2 className="text-2xl font-semibold">
-                {isTechnical ? "Technical Documentation" : "Quick Start Guide"}
+                {isTechnical ? "Technical Track Schedule" : "Event Highlights"}
               </h2>
               <p className="text-muted-foreground">
                 {isTechnical
-                  ? "Explore our API documentation, system architecture, and developer tools."
-                  : "Learn the basics and get started with our intuitive features."}
+                  ? "Join our coding workshops, hackathons, and technical talks."
+                  : "Experience music performances, art exhibitions, and cultural shows."}
               </p>
               <button className="px-6 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity">
-                {isTechnical ? "View Documentation" : "Get Started"}
+                {isTechnical ? "View Schedule" : "Browse Events"}
               </button>
             </div>
           </div>
