@@ -30,11 +30,11 @@
 
 @layer components {
   .glass {
-    @apply bg-white/10 backdrop-blur-lg border border-white/20 rounded-2xl;
+    @apply bg-black/5 backdrop-blur-lg border border-white/20 rounded-2xl shadow-xl;
   }
 
   .glass-card {
-    @apply backdrop-blur-xl bg-white/5 border border-white/10 shadow-[0_4px_12px_-2px_rgba(0,0,0,0.1)] rounded-2xl;
+    @apply backdrop-blur-xl bg-black/10 border border-white/20 shadow-[0_8px_16px_-4px_rgba(0,0,0,0.1)] rounded-2xl;
   }
 
   .toggle-switch {
@@ -51,12 +51,12 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-gradient-to-br from-purple-50 via-fuchsia-50 to-pink-50 min-h-screen text-foreground antialiased;
   }
 }
 
 .animated-gradient {
-  background: linear-gradient(90deg, rgba(147,39,143,0.1) 0%, rgba(234,172,232,0.1) 50%, rgba(246,219,245,0.1) 100%);
+  background: linear-gradient(90deg, rgba(147,39,143,0.05) 0%, rgba(234,172,232,0.05) 50%, rgba(246,219,245,0.05) 100%);
   background-size: 200% 200%;
   animation: gradient 15s ease infinite;
 }
