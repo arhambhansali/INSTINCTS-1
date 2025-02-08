@@ -1,23 +1,11 @@
 
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Index = () => {
   const [isTechnical, setIsTechnical] = useState(false);
-
-  const technicalEvents = [
-    "Aeromodelling Workshop",
-    "Airborne",
-    "Techno-Celestia",
-    "Tec-H-ealth Talk Show",
-    "Rescue Warrior",
-    "Inflate & Explode",
-    "Puzzle Pursuit",
-    "Halt & Grind",
-    "Mind Matrix",
-    "Cirature",
-    "ArcTech 2"
-  ];
+  const navigate = useNavigate();
 
   return (
     <div className={`min-h-screen p-6 ${isTechnical ? 'technical-bg' : 'non-technical-bg'} animated-gradient`}>
@@ -46,46 +34,15 @@ const Index = () => {
             </div>
 
             <div className="flex justify-center gap-4">
-              <button className={`px-6 py-2 ${!isTechnical ? 'bg-[#fdbe39]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}>
+              <button 
+                onClick={() => navigate('/schedule')}
+                className={`px-6 py-2 ${!isTechnical ? 'bg-[#FEF7CD]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}
+              >
                 Schedule
               </button>
-              <button className={`px-6 py-2 ${!isTechnical ? 'bg-[#fdbe39]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}>
+              <button className={`px-6 py-2 ${!isTechnical ? 'bg-[#FEF7CD]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}>
                 Register Now
               </button>
-            </div>
-          </div>
-
-          <div className="glass p-6 space-y-4">
-            <h2 className="text-2xl font-semibold">
-              {isTechnical ? "Technical Events" : "Non-Technical Events"}
-            </h2>
-            
-            <div className="grid gap-4">
-              {isTechnical ? (
-                technicalEvents.map((event, index) => (
-                  <div key={index} className="p-4 glass-card transform transition-transform duration-200 ease-out hover:scale-[1.02]">
-                    <div className="flex justify-between items-center">
-                      <h3 className="font-medium">{event}</h3>
-                      <button className="px-4 py-1.5 bg-primary text-primary-foreground rounded-xl hover:opacity-90 transition-opacity text-sm text-center">
-                        Register Now
-                      </button>
-                    </div>
-                  </div>
-                ))
-              ) : (
-                <div className="grid gap-4 md:grid-cols-2">
-                  {Array.from({ length: 32 }, (_, i) => (
-                    <div key={i} className="p-4 glass-card transform transition-transform duration-200 ease-out hover:scale-[1.02]">
-                      <div className="flex justify-between items-center">
-                        <h3 className="font-medium">Event {i + 1}</h3>
-                        <button className="px-4 py-1.5 bg-[#fdbe39] text-primary-foreground rounded-xl hover:opacity-90 transition-opacity text-sm text-center">
-                          Register Now
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
           </div>
         </div>

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -26,6 +25,15 @@
     --ring: 262.1 83.3% 57.8%;
     --radius: 1rem;
   }
+  * {
+    @apply border-border;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply text-foreground antialiased;
+    overscroll-behavior-y: none;
+  }
 }
 
 @layer components {
@@ -47,15 +55,6 @@
 
   .toggle-thumb {
     @apply pointer-events-none block h-5 w-5 rounded-full bg-white shadow-lg ring-0 transition-transform data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply text-foreground antialiased;
   }
 }
 
