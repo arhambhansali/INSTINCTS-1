@@ -3,16 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  base: "./", // Ensures relative paths are used for build output
+  base: "./", // Use relative paths for production builds
   build: {
     rollupOptions: {
-      input: path.resolve(__dirname, "index.html"), // Explicitly set the entry point
+      input: path.posix.resolve(__dirname, "index.html"), // Explicitly set entry point for Rollup
     },
   },
-  plugins: [react()],
+  plugins: [react()], // React SWC plugin for Vite
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"), // Alias for src folder
     },
   },
 });
