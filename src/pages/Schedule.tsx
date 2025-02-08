@@ -1,9 +1,13 @@
 
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { X } from "lucide-react";
 
 const Schedule = () => {
   const [isTechnical, setIsTechnical] = useState(false);
+  const navigate = useNavigate();
 
   const technicalEvents = [
     "Aeromodelling Workshop",
@@ -23,6 +27,18 @@ const Schedule = () => {
     <div className={`min-h-screen p-6 ${isTechnical ? 'technical-bg' : 'non-technical-bg'} animated-gradient`}>
       <div className="max-w-5xl mx-auto space-y-8">
         <div className="glass-card p-8 space-y-6">
+          <div className="flex justify-between items-center">
+            <div />
+            <Button 
+              variant="ghost" 
+              size="icon"
+              onClick={() => navigate('/')}
+              className="rounded-full hover:bg-white/10"
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+
           <div className="text-center space-y-4">
             <div className="flex justify-center items-center space-x-4 my-6">
               <span className={`text-sm font-medium ${!isTechnical ? 'text-primary' : 'text-muted-foreground'}`}>
@@ -64,7 +80,7 @@ const Schedule = () => {
                     <div key={i} className="p-4 glass-card transform hover:scale-[1.02] transition-transform duration-300 ease-out">
                       <div className="flex justify-between items-center">
                         <h3 className="font-medium">Event {i + 1}</h3>
-                        <button className="px-4 py-1.5 bg-[#FEF7CD] text-primary-foreground rounded-xl hover:opacity-90 transition-opacity text-sm text-center">
+                        <button className="px-4 py-1.5 bg-[#fdbe39] text-primary-foreground rounded-xl hover:opacity-90 transition-opacity text-sm text-center">
                           Register Now
                         </button>
                       </div>
