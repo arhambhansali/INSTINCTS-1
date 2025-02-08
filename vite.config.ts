@@ -3,15 +3,21 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      input: "index.html", // Ensures correct entry point
-    },
-  },
+  base: "./", // Ensures relative paths for assets
   plugins: [react()],
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      input: "index.html",
+      output: {
+        entryFileNames: "assets/[name]-[hash].js",
+        chunkFileNames: "assets/[name]-[hash].js",
+        assetFileNames: "assets/[name]-[hash][extname]",
+      },
     },
   },
 });
