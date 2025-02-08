@@ -25,7 +25,7 @@ const Schedule = () => {
 
   return (
     <Sheet open={true} onOpenChange={() => navigate("/")}>
-      <SheetContent side="right" className="w-full max-w-[800px] sm:w-[540px] mx-auto p-0">
+      <SheetContent side="right" className="w-full max-w-[1200px] sm:w-[90vw] mx-auto p-0">
         <div className={`min-h-screen ${isTechnical ? 'technical-bg' : 'non-technical-bg'} animated-gradient`}>
           <div className="p-6 space-y-8">
             <div className="glass-card p-8 space-y-6">
