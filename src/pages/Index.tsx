@@ -36,17 +36,20 @@ const Index = () => {
             <div className="flex justify-center gap-4">
               <button 
                 onClick={() => navigate('/schedule')}
-                className={`px-6 py-2 ${!isTechnical ? 'bg-[#FEF7CD]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}
+                className={`px-6 py-2 ${!isTechnical ? 'bg-[#fdbe39]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}
               >
                 Schedule
               </button>
-              <button className={`px-6 py-2 ${!isTechnical ? 'bg-[#FEF7CD]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}>
+              <button className={`px-6 py-2 ${!isTechnical ? 'bg-[#fdbe39]' : 'bg-primary'} text-primary-foreground rounded-2xl hover:opacity-90 transition-opacity`}>
                 Register Now
               </button>
             </div>
           </div>
         </div>
       </div>
+      <footer className={`fixed bottom-0 left-0 right-0 text-center p-4 ${isTechnical ? 'bg-primary' : 'bg-[#fdbe39]'} text-white`}>
+        Indus University Rancharda, Via: Thaltej, Ahmedabad 382 115, Gujarat, India
+      </footer>
     </div>
   );
 };
